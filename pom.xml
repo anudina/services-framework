@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.verizon.ivapp.servicesframework</groupId>
+  <artifactId>Services-Framework</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.0.RELEASE</version>
+	</parent>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- Test defaults. -->
+		<maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
+		<surefire.failIfNoSpecifiedTests>false</surefire.failIfNoSpecifiedTests>
+		<failsafe.timeout>600</failsafe.timeout>
+		<!-- Compiler defaults. -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- Release configuration. -->
+		<localCheckout>true</localCheckout>
+		<pushChanges>false</pushChanges>
+		<!-- Deployment configuration. Default configuration is public. -->
+		<public.serverId>nexus</public.serverId>
+		<public.nexusUrl>verizon nexus url</public.nexusUrl>
+
+		<public-release.serverId>${public.serverId}</public-release.serverId>
+		<site.basedir>${project.basedir}/src/site</site.basedir>
+		<public-site.serverId>${public.serverId}</public-site.serverId>
+		<public-site.url>dav:https://verizon.com/nexus/content/sites/mavensites/${project.groupId}/</public-site.url>
+
+		<!-- Spring config -->
+		<spring-ws.version>2.2.4.RELEASE</spring-ws.version>
+		<springLdapVersion>2.0.4.RELEASE</springLdapVersion>
+		<slf4JVersion>1.7.12</slf4JVersion>
+		<tomcatVersion>7.0.42</tomcatVersion>
+		<wss4jVersion>1.6.16</wss4jVersion>
+		<javaxJSTLVersion>1.2</javaxJSTLVersion>
+		<teradataJDBCVersion>13.10.00.35</teradataJDBCVersion>
+		<oracleJDBCVersion>12.1.0.2.0</oracleJDBCVersion>
+		<querydsl>4.0.6</querydsl>
+		<jadira.version>5.0.0.GA</jadira.version>
+		<hibernate.version>5.0.6.Final</hibernate.version>
+	</properties>
+	<build>
+		<defaultGoal>install</defaultGoal>
+	</build>
+		<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-ws</artifactId>
+		</dependency>
+	</dependencies>
+		<modules>
+			<module>services-core</module>
+		</modules>
+</project>
