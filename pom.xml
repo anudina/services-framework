@@ -44,11 +44,22 @@
 		<querydsl>4.0.6</querydsl>
 		<jadira.version>5.0.0.GA</jadira.version>
 		<hibernate.version>5.0.6.Final</hibernate.version>
+		<swagger.version>2.2.2</swagger.version>
 	</properties>
 	<build>
 		<defaultGoal>install</defaultGoal>
 	</build>
 	<dependencies>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
@@ -102,6 +113,6 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			</dependency>
+		</dependency>
 	</dependencies>
 </project>
